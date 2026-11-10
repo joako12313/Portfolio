@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <title>Gymly - Inicio</title>
+    <link rel="stylesheet" href="../Css/componentes.css?v=app3">
+    <link rel="stylesheet" href="../Css/phone.css?v=app3">
+    <link rel="stylesheet" href="../Css/usuario.css?v=app3">
+</head>
+<body class="app">
+<div class="phone">
+<div class="phone-screen">
+
+    <!-- CABECERA -->
+    <header>
+        <div class="header-izq">
+            
+            <h1>GYMLY</h1>
+        </div>
+        <button id="btnNotificaciones" type="button" aria-label="Notificaciones" title="Notificaciones">
+            <img class="icono-notificaciones" src="../Img/icono-notificaciones.png" alt="">
+        </button>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main>
+
+        <!-- BIENVENIDA -->
+        <section id="bienvenida">
+            <p class="eyebrow">Bienvenido/a</p>
+            <h2>Hola, <span id="nombreUsuario">Usuario</span></h2>
+            <p class="desc">¿Listo para entrenar?</p>
+        </section>
+
+        <!-- RUTINA DEL DÍA -->
+        <section id="rutinaDelDia">
+            <h2>Rutina de hoy</h2>
+            <h3 id="nombreRutina">Buscando rutina...</h3>
+            <p>Ejercicios: <span id="cantidadEjercicios">—</span></p>
+            <p id="estadoRutinaHoy" role="status" aria-live="polite"></p>
+            <button id="btnComenzar" type="button" disabled>Comenzar entrenamiento</button>
+        </section>
+
+        <!-- ACCESOS RÁPIDOS -->
+        <section id="accesosRapidos">
+            <h2 class="subtitulo">Accesos rápidos</h2>
+            <button id="btnRutinas" class="fila-acceso" type="button">
+                <span class="fila-icono"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18V9"/><path d="M19 18V9"/><path d="M8 18V6.5A2.5 2.5 0 0 1 10.5 4h3A2.5 2.5 0 0 1 16 6.5V18"/><path d="M3 18h18"/></svg></span>
+                <span class="fila-texto">Mis rutinas</span>
+                <span class="fila-flecha"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></span>
+            </button>
+            <button id="btnHistorial" class="fila-acceso" type="button">
+                <span class="fila-icono"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                <span class="fila-texto">Historial</span>
+                <span class="fila-flecha"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></span>
+            </button>
+            <button id="btnProgreso" class="fila-acceso" type="button">
+                <span class="fila-icono"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5"/><path d="M4 19h16"/><path d="m8 15 3-4 3 2 4-6"/></svg></span>
+                <span class="fila-texto">Mi progreso</span>
+                <span class="fila-flecha"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></span>
+            </button>
+            <button id="btnMensualidad" class="fila-acceso" type="button">
+                <span class="fila-icono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 10h18"/><path d="M7 15h4"/></svg></span>
+                <span class="fila-texto">Mi mensualidad</span>
+                <span class="fila-flecha"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></span>
+            </button>
+            <button id="btnGimnasio" class="fila-acceso" type="button">
+                <span class="fila-icono"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+                <span class="fila-texto">Información del gimnasio</span>
+                <span class="fila-flecha"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></span>
+            </button>
+        </section>
+
+        <!-- CHAT -->
+        <section id="chat">
+            <h2>Chat</h2>
+            <p>¿Necesitás ayuda? Podés hablar con el administrador.</p>
+            <button id="btnChat" class="btn-primario" type="button">Abrir chat</button>
+        </section>
+    </main>
+
+    <!-- NAVEGACIÓN -->
+    <nav>
+        <button id="navInicio" type="button">Inicio</button>
+        <button id="navRutinas" type="button">Rutinas</button>
+        <button id="navChat" type="button">Chat</button>
+        <button id="navPerfil" type="button">Perfil</button>
+    </nav>
+
+</div>
+</div>
+    <script src="../Js/demo-api.js"></script>
+    <script src="../Js/ui.js?v=app3"></script>
+    <script src="../Js/usuario.js"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+/* =========================================================
+   GYMLY - MARCO DE TELÉFONO Y ESTRUCTURA DE LA APP
+   Compartido por la app del socio y las pantallas de acceso.
+
+   - En computadora: la app se dibuja dentro de un teléfono.
+   - En un celular real (o ventana angosta): ocupa toda la pantalla.
+
+   Estructura:
+   body.app > .phone > .phone-screen > header + main + nav
+   ========================================================= */
+
+:root {
+    --phone-ancho: 430px;
+    --barra-estado: 0px;
+}
+
+/* ---------- ESCENARIO (fondo a los costados) ---------- */
+
+body.app {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    background-color: #020303;
+    background-image: radial-gradient(circle at center, rgba(243, 192, 62, 0.2), transparent 30%);
+    background-attachment: fixed;
+}
+
+/* ---------- APP (proporciones de celular, sin marco) ---------- */
+
+.phone {
+    position: relative;
+    flex: none;
+    width: min(100%, var(--phone-ancho));
+    height: 100vh;
+    height: 100dvh;
+    background: #000000;
+    overflow: hidden;
+    isolation: isolate;
+    box-shadow:
+        0 0 0 1px #2a2a2a,
+        0 0 30px rgba(245, 197, 24, 0.25);
+}
+
+/* ---------- PANTALLA ---------- */
+
+.phone-screen {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: var(--barra-estado);
+    background: #000000;
+}
+
+/* ---------- CABECERA ---------- */
+
+.phone-screen > header {
+    flex: none;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 6px 16px;
+    background: rgba(0, 0, 0, 0.92);
+    border-bottom: 1px solid #2a2a2a;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 10;
+}
+
+.header-izq {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.phone-screen > header h1 {
+    color: #F5C518;
+    font-size: 22px;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+/* Botón volver */
+#btnVolver {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    color: #f5f5f5;
+    cursor: pointer;
+}
+
+#btnVolver svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+#btnVolver:hover {
+    border-color: rgba(245, 197, 24, 0.9);
+    color: #F5C518;
+    background: rgba(245, 197, 24, 0.05);
+}
+
+/* Botón de notificaciones (misma imagen de siempre) */
+#btnNotificaciones {
+    position: relative;
+    flex: none;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border: none;
+    border-radius: 15px;
+    background: rgba(17, 17, 17, 0.96);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#btnNotificaciones:hover {
+    background: rgba(17, 17, 17, 1);
+}
+
+.icono-notificaciones {
+    width: 62px;
+    height: 62px;
+    max-width: none;
+    flex: 0 0 62px;
+    display: block;
+}
+
+.notif-punto {
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #F5C518;
+    box-shadow: 0 0 0 2px #111111, 0 0 12px rgba(245, 197, 24, 0.6);
+    animation: gymlyPulso 2s ease-in-out infinite;
+}
+
+/* ---------- CONTENIDO (zona con scroll) ---------- */
+
+.phone-screen > main {
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    padding: 22px 16px 28px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.phone-screen > main::-webkit-scrollbar {
+    display: none;
+}
+
+/* ---------- NAVEGACIÓN INFERIOR ---------- */
+
+.phone-screen > nav {
+    flex: none;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    padding: 10px 12px 12px;
+    background: #000000;
+    border-top: 1px solid #1b1b1b;
+    position: relative;
+    z-index: 10;
+}
+
+.phone-screen > nav button {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-height: 58px;
+    padding: 8px 6px;
+    background: rgba(255, 255, 255, 0.02);
+    color: #aaaaaa;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+}
+
+.phone-screen > nav button::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 4px;
+    width: 0;
+    height: 2px;
+    background: #F5C518;
+    transform: translateX(-50%);
+    transition: width 0.2s ease;
+}
+
+.phone-screen > nav button:hover::after,
+.phone-screen > nav button:focus-visible::after {
+    width: 55%;
+}
+
+.phone-screen > nav button:hover {
+    border-color: rgba(245, 197, 24, 0.9);
+    color: #F5C518;
+    background: rgba(245, 197, 24, 0.05);
+    box-shadow: 0 8px 18px rgba(245, 197, 24, 0.08);
+}
+
+.phone-screen > nav button.active {
+    background: linear-gradient(180deg, rgba(245, 197, 24, 0.16), rgba(245, 197, 24, 0.08));
+    border-color: rgba(245, 197, 24, 0.9);
+    color: #F5C518;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 8px 18px rgba(245, 197, 24, 0.09);
+}
+
+.nav-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    color: inherit;
+}
+
+.nav-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.nav-label {
+    display: block;
+    line-height: 1.1;
+}
+
+/* Celular real: respeta las zonas seguras del dispositivo */
+@media (max-width: 500px) {
+    .phone {
+        box-shadow: none;
+    }
+
+    .phone-screen {
+        padding-top: env(safe-area-inset-top, 0px);
+    }
+
+    .phone-screen > nav {
+        padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .phone .gy-toasts {
+        top: calc(12px + env(safe-area-inset-bottom, 0px));
+    }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <title>Gymly - Registro de la rutina</title>
+    <link rel="stylesheet" href="../Css/componentes.css?v=app3">
+    <link rel="stylesheet" href="../Css/phone.css?v=app3">
+    <link rel="stylesheet" href="../Css/usuario.css?v=app3">
+</head>
+<body class="app">
+<div class="phone">
+<div class="phone-screen">
+
+    <!-- CABECERA -->
+    <header>
+        <div class="header-izq">
+            <button id="btnVolver" type="button" aria-label="Volver"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <h1>GYMLY</h1>
+        </div>
+        <button id="btnNotificaciones" type="button" aria-label="Notificaciones" title="Notificaciones">
+            <img class="icono-notificaciones" src="../Img/icono-notificaciones.png" alt="">
+        </button>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main>
+
+        <section id="tituloRegistro" class="titulo-pagina">
+            <p class="eyebrow">Registro de la rutina</p>
+            <h2 id="nombreRutinaRegistro">Cargando...</h2>
+            <p class="desc" id="descripcionRegistro"></p>
+        </section>
+
+        <section id="resumenRegistro" class="resumen-registro" hidden>
+            <div class="dato-resumen"><span>Sesiones</span><strong id="totalSesiones">0</strong></div>
+            <div class="dato-resumen"><span>Último</span><strong id="ultimaSesion">—</strong></div>
+            <div class="dato-resumen"><span>Volumen</span><strong id="volumenTotal">0 kg</strong></div>
+        </section>
+
+        <section id="listaSesiones"></section>
+
+        <section id="sinRegistros" class="estadoVacio" style="display:none">
+            <h3>Todavía no hay registros</h3>
+            <p>Cuando guardes un entrenamiento de esta rutina, vas a ver acá el peso, las repeticiones y las series de cada ejercicio.</p>
+            <button id="btnIrEntrenar" class="btn-primario" type="button">Ver rutina</button>
+        </section>
+    </main>
+
+    <!-- NAVEGACIÓN -->
+    <nav>
+        <button id="navInicio" type="button">Inicio</button>
+        <button id="navRutinas" type="button">Rutinas</button>
+        <button id="navChat" type="button">Chat</button>
+        <button id="navPerfil" type="button">Perfil</button>
+    </nav>
+
+</div>
+</div>
+    <script src="../Js/demo-api.js"></script>
+    <script src="../Js/ui.js?v=app3"></script>
+    <script src="../Js/registros.js"></script>
+    <script src="../Js/registro.js"></script>
+    <script src="../Js/usuario.js"></script>
+</body>
+</html>

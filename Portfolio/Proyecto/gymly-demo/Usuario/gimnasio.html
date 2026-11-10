@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <title>Gymly - Mi gimnasio</title>
+    <link rel="stylesheet" href="../Css/componentes.css?v=app3">
+    <link rel="stylesheet" href="../Css/phone.css?v=app3">
+    <link rel="stylesheet" href="../Css/usuario.css?v=app3">
+</head>
+<body class="app">
+<div class="phone">
+<div class="phone-screen">
+
+    <!-- CABECERA -->
+    <header>
+        <div class="header-izq">
+            <button id="btnVolver" type="button" aria-label="Volver"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <h1>GYMLY</h1>
+        </div>
+        <button id="btnNotificaciones" type="button" aria-label="Notificaciones" title="Notificaciones">
+            <img class="icono-notificaciones" src="../Img/icono-notificaciones.png" alt="">
+        </button>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main>
+
+        <section id="tituloGimnasio" class="titulo-pagina">
+            <p class="eyebrow">Información</p>
+            <h2>Mi gimnasio</h2>
+            <p class="desc">Acá podés consultar la información del gimnasio al que pertenecés.</p>
+        </section>
+
+        <section id="informacionGimnasio" class="tarjetaGimnasio">
+            <div class="encabezadoGimnasio">
+                <div>
+                    <p class="eyebrow">Gimnasio</p>
+                    <h3 id="nombreGimnasio">Cargando...</h3>
+                </div>
+            </div>
+
+            <div class="datoGimnasio">
+                <span>Dirección</span>
+                <strong id="direccionGimnasio">Cargando...</strong>
+            </div>
+
+            <div class="datoGimnasio">
+                <span>Teléfono</span>
+                <strong id="telefonoGimnasio">Cargando...</strong>
+            </div>
+
+            <div class="datoGimnasio dato-horarios">
+                <span>Horarios de atención</span>
+                <ul id="horariosGimnasio" aria-label="Horarios de atención">
+                    <li>Cargando...</li>
+                </ul>
+            </div>
+        </section>
+
+        <p id="errorGimnasio" role="alert"></p>
+
+        <section id="contactoGimnasio" class="tarjetaGimnasio">
+            <h3>Contacto</h3>
+            <p>Si necesitás realizar una consulta, podés comunicarte con el gimnasio mediante el chat de Gymly.</p>
+            <button id="btnAbrirChatGimnasio" class="btnPrincipal" type="button">Abrir chat</button>
+        </section>
+    </main>
+
+    <!-- NAVEGACIÓN -->
+    <nav>
+        <button id="navInicio" type="button">Inicio</button>
+        <button id="navRutinas" type="button">Rutinas</button>
+        <button id="navChat" type="button">Chat</button>
+        <button id="navPerfil" type="button">Perfil</button>
+    </nav>
+
+</div>
+</div>
+    <script src="../Js/demo-api.js"></script>
+    <script src="../Js/ui.js?v=app3"></script>
+    <script src="../Js/gimnasio.js"></script>
+    <script src="../Js/usuario.js"></script>
+</body>
+</html>
