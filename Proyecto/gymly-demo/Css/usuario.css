@@ -1,0 +1,1339 @@
+/* =========================================================
+   GYMLY - PANTALLAS DE LA APP DEL SOCIO
+   Se usa junto a componentes.css (base) y phone.css (marco).
+   Paleta: negro #000 / #111 / #1c1c1c, borde #2a2a2a,
+   acento #F5C518, texto secundario #aaa.
+   ========================================================= */
+
+/* ---------- TÍTULOS DE PÁGINA ---------- */
+
+.titulo-pagina {
+    margin-bottom: 22px;
+}
+
+.eyebrow {
+    margin-bottom: 6px;
+    color: #F5C518;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.titulo-pagina h2 {
+    margin-bottom: 6px;
+    font-size: 27px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.titulo-pagina .desc,
+.desc {
+    color: #aaaaaa;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+section h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+section h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+p {
+    color: #aaaaaa;
+    line-height: 1.5;
+}
+
+.subtitulo {
+    margin: 26px 0 12px;
+    font-size: 13px !important;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #aaaaaa;
+}
+
+/* ---------- TARJETA BASE ---------- */
+
+.card,
+.rutina,
+.registro,
+.sesion,
+.ejercicio,
+.tarjetaGimnasio,
+.estado-cuota,
+#informacionRutina,
+#informacionUsuario,
+#editarPerfil,
+#sesion,
+#informacionChat,
+.detalleEjercicio {
+    background-color: #1c1c1c;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 14px;
+}
+
+/* ---------- BOTONES ---------- */
+
+.btn-primario,
+.btnVerRutina,
+.btnVerRegistro,
+.btnGuardarEjercicio,
+.btnPrincipal,
+#btnGuardarPerfil,
+#formChat button[type="submit"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 11px 18px;
+    border: 1px solid #F5C518;
+    border-radius: 12px;
+    background: #F5C518;
+    color: #111111;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-primario:hover,
+.btnVerRutina:hover,
+.btnVerRegistro:hover,
+.btnGuardarEjercicio:hover,
+.btnPrincipal:hover,
+#btnGuardarPerfil:hover,
+#formChat button[type="submit"]:hover {
+    background: transparent;
+    color: #F5C518;
+}
+
+.btn-secundario,
+.btnVerRutina.secundario,
+#btnCerrarSesion,
+#btnHistorial.btn-secundario,
+.tarjetaEjercicio button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 11px 18px;
+    border: 1px solid #F5C518;
+    border-radius: 12px;
+    background: transparent;
+    color: #F5C518;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-secundario:hover,
+.btnVerRutina.secundario:hover,
+#btnCerrarSesion:hover,
+.tarjetaEjercicio button:hover {
+    background: #F5C518;
+    color: #000000;
+}
+
+.btn-bloque {
+    display: flex;
+    width: 100%;
+}
+
+.btnGuardarEjercicio:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ---------- INICIO ---------- */
+
+#bienvenida {
+    margin-bottom: 22px;
+}
+
+#bienvenida h2 {
+    margin-bottom: 4px;
+    font-size: 28px;
+    letter-spacing: -0.02em;
+}
+
+#nombreUsuario {
+    color: #F5C518;
+}
+
+/* Rutina del día (tarjeta amarilla) */
+#rutinaDelDia {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 26px;
+    padding: 20px 20px 18px;
+    border: 1px solid #F5C518;
+    border-radius: 22px;
+    background: #F5C518;
+    color: #111111;
+    box-shadow: 0 8px 24px rgba(245, 197, 24, 0.2);
+}
+
+#rutinaDelDia h2,
+#rutinaDelDia h3,
+#rutinaDelDia p,
+#rutinaDelDia span {
+    color: #111111;
+}
+
+#rutinaDelDia > h2 {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: rgba(17, 17, 17, 0.1);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+#rutinaDelDia h3 {
+    margin-bottom: 8px;
+    font-size: 30px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+#rutinaDelDia p {
+    margin-bottom: 6px;
+    color: rgba(17, 17, 17, 0.8);
+    font-size: 15px;
+}
+
+#rutinaDelDia #estadoRutinaHoy {
+    min-height: 20px;
+    margin-bottom: 18px;
+    font-size: 13px;
+}
+
+#btnComenzar,
+#btnFinalizar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 52px;
+    padding: 14px 18px;
+    border: 1px solid rgba(17, 17, 17, 0.9);
+    border-radius: 14px;
+    background: #111111;
+    color: #F5C518;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    box-shadow: 0 10px 22px rgba(17, 17, 17, 0.18);
+}
+
+#btnComenzar:hover,
+#btnFinalizar:hover {
+    background: #000000;
+    color: #F5C518;
+}
+
+/* Accesos rápidos */
+#accesosRapidos {
+    margin-bottom: 26px;
+}
+
+.fila-acceso {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px 14px;
+    border: 1px solid #2a2a2a;
+    border-radius: 14px;
+    background: #1c1c1c;
+    color: #ffffff;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.fila-acceso:hover {
+    border-color: #F5C518;
+    color: #F5C518;
+    background: rgba(245, 197, 24, 0.05);
+    box-shadow: 0 8px 18px rgba(245, 197, 24, 0.08);
+}
+
+.fila-icono {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(245, 197, 24, 0.1);
+    color: #F5C518;
+}
+
+.fila-icono svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.fila-texto {
+    flex: 1;
+    min-width: 0;
+}
+
+.fila-flecha {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    color: #aaaaaa;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.fila-flecha svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.fila-acceso:hover .fila-flecha {
+    color: #F5C518;
+    transform: translateX(3px);
+}
+
+/* Chat en inicio */
+#chat {
+    margin-bottom: 8px;
+    padding: 18px;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    background: #1c1c1c;
+}
+
+#chat h2 {
+    margin-bottom: 4px;
+}
+
+#chat p {
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+#btnChat {
+    width: 100%;
+}
+
+/* ---------- LISTAS DE TARJETAS ---------- */
+
+#listaRutinasUsuario,
+#historialEntrenamientos,
+#listaEjerciciosUsuario,
+#listaSesiones {
+    display: block;
+}
+
+.rutina,
+.registro {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    animation: gymlyEntrada .45s ease both;
+}
+
+.rutina:nth-child(2) { animation-delay: .06s; }
+.rutina:nth-child(3) { animation-delay: .12s; }
+.rutina:nth-child(4) { animation-delay: .18s; }
+
+.rutina-cabecera {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.rutina h3,
+.registro h3 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.25;
+}
+
+.rutina p,
+.registro p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.rutina .objetivo {
+    color: #F5C518;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.etiqueta {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border: 1px solid #F5C518;
+    border-radius: 999px;
+    color: #F5C518;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.etiqueta.hoy {
+    background: #F5C518;
+    color: #111111;
+}
+
+.etiqueta.neutra {
+    border-color: #2a2a2a;
+    background: #111111;
+    color: #aaaaaa;
+}
+
+.rutina-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    padding-top: 2px;
+    color: #aaaaaa;
+    font-size: 13px;
+}
+
+.rutina-acciones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.rutina-acciones button {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.registro {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.registro > div {
+    min-width: 0;
+}
+
+.registro .btnVerRegistro {
+    flex: none;
+    min-width: 0;
+    min-height: 42px;
+    padding: 9px 14px;
+}
+
+/* Estados vacíos */
+#sinRutinas,
+#sinHistorial,
+#sinEjerciciosUsuario,
+#sinEjerciciosEntrenamiento,
+.estadoVacio {
+    padding: 36px 20px;
+    border: 1px dashed #2a2a2a;
+    border-radius: 16px;
+    text-align: center;
+    color: #aaaaaa;
+    animation: gymlyEntrada .4s ease both;
+}
+
+#sinRutinas,
+#sinHistorial,
+#sinEjerciciosUsuario {
+    display: none;
+}
+
+.estadoVacio h3,
+#sinRutinas h3,
+#sinHistorial h3,
+#sinEjerciciosUsuario h3 {
+    margin-bottom: 6px;
+    color: #ffffff;
+}
+
+.estadoVacio .btn-primario {
+    margin-top: 16px;
+}
+
+.mensaje-error {
+    padding: 14px 16px;
+    border: 1px solid rgba(255, 138, 128, 0.3);
+    border-radius: 12px;
+    background: rgba(255, 138, 128, 0.07);
+    color: #ffaaa2;
+    font-size: 14px;
+}
+
+/* ---------- ENTRENAMIENTO ---------- */
+
+#informacionRutina {
+    margin-bottom: 18px;
+    padding: 18px;
+}
+
+#informacionRutina h2 {
+    margin-bottom: 6px;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+}
+
+#informacionRutina p {
+    font-size: 14px;
+}
+
+#informacionRutina #cantidadEjercicios {
+    color: #ffffff;
+}
+
+.barra-progreso {
+    height: 6px;
+    margin-top: 14px;
+    border-radius: 999px;
+    background: #111111;
+    overflow: hidden;
+}
+
+.barra-progreso > span {
+    display: block;
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: #F5C518;
+    box-shadow: 0 0 18px rgba(245, 197, 24, 0.12);
+    transition: width 0.4s ease;
+}
+
+#listaEjercicios > h2 {
+    display: none;
+}
+
+#ejerciciosEntrenamiento {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+}
+
+.ejercicioEntrenamiento {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    margin-bottom: 0;
+    animation: entradaGymly .45s ease both;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.ejercicioEntrenamiento:nth-child(2) { animation-delay: .06s; }
+.ejercicioEntrenamiento:nth-child(3) { animation-delay: .12s; }
+.ejercicioEntrenamiento:nth-child(4) { animation-delay: .18s; }
+
+@media (hover: hover) {
+    .ejercicioEntrenamiento:hover {
+        transform: translateY(-3px);
+        border-color: #F5C518;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.ejercicioEntrenamiento .mediosEjercicio {
+    margin: 0;
+}
+
+.ejercicioInfo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.ejercicioInfo h3 {
+    margin-bottom: 4px;
+    font-size: 17px;
+}
+
+.ejercicioInfo p {
+    font-size: 13px;
+}
+
+.numeroEjercicio {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #F5C518;
+    color: #000000;
+    font-weight: bold;
+}
+
+.registroEjercicio {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.registroEjercicio > div {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: #aaaaaa;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+    margin-top: 6px;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    background-color: #111111;
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+}
+
+input::placeholder {
+    color: #8a8a8a;
+}
+
+.ejercicioEntrenamiento .btnGuardarEjercicio {
+    width: 100%;
+    margin: 0;
+}
+
+.estadoRegistro {
+    margin: 0;
+    font-size: 13px;
+    transition: color .2s ease, transform .2s ease;
+}
+
+.registroCompleto {
+    color: #F5C518;
+    transform: translateX(4px);
+}
+
+#finalizarEntrenamiento {
+    position: sticky;
+    bottom: -28px;
+    margin: 20px -16px -28px;
+    padding: 14px 16px 18px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0), #000000 38%);
+    z-index: 5;
+}
+
+/* ---------- REGISTRO DE LA RUTINA ---------- */
+
+.resumen-registro {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.dato-resumen {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px 10px;
+    border: 1px solid #2a2a2a;
+    border-radius: 14px;
+    background: #1c1c1c;
+    animation: gymlyEntrada .45s ease both;
+}
+
+.dato-resumen span {
+    color: #aaaaaa;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.dato-resumen strong {
+    color: #F5C518;
+    font-size: 17px;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+}
+
+.sesion {
+    padding: 0;
+    overflow: hidden;
+    animation: gymlyEntrada .45s ease both;
+}
+
+.sesion.destacada {
+    border-color: rgba(245, 197, 24, 0.9);
+    box-shadow: 0 8px 18px rgba(245, 197, 24, 0.09);
+}
+
+.sesion summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 14px 16px;
+    list-style: none;
+    cursor: pointer;
+}
+
+.sesion summary::-webkit-details-marker {
+    display: none;
+}
+
+.sesion summary h3 {
+    margin: 0 0 2px;
+    font-size: 16px;
+}
+
+.sesion summary h3::first-letter {
+    text-transform: uppercase;
+}
+
+.sesion summary p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.sesion summary .fila-flecha {
+    transition: transform 0.25s ease, color 0.2s ease;
+}
+
+.sesion[open] summary .fila-flecha {
+    transform: rotate(90deg);
+    color: #F5C518;
+}
+
+.sesion-cuerpo {
+    padding: 0 16px 16px;
+    border-top: 1px solid #2a2a2a;
+}
+
+.detalleEjercicio {
+    margin: 12px 0 0;
+    padding: 12px;
+    border-radius: 12px;
+    background: #111111;
+    transition: transform .2s ease, border-color .2s ease;
+}
+
+@media (hover: hover) {
+    .detalleEjercicio:hover {
+        transform: translateX(4px);
+        border-color: #F5C518;
+    }
+}
+
+.detalleEjercicio strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.datos-ejercicio {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.datos-ejercicio div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.datos-ejercicio span {
+    color: #aaaaaa;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.datos-ejercicio b {
+    color: #F5C518;
+    font-size: 16px;
+}
+
+/* ---------- PROGRESO ---------- */
+
+#contenidoProgreso {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+#contenidoProgreso > p {
+    grid-column: 1 / -1;
+}
+
+.card-progreso {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    background: #1c1c1c;
+    animation: gymlyEntrada .45s ease both;
+    transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+.card-progreso:nth-child(2) { animation-delay: .06s; }
+.card-progreso:nth-child(3) { animation-delay: .12s; }
+.card-progreso:nth-child(4) { animation-delay: .18s; }
+
+@media (hover: hover) {
+    .card-progreso:hover {
+        transform: translateY(-3px);
+        border-color: #3d3d3d;
+        box-shadow: 0 8px 22px rgba(0, 0, 0, .24);
+    }
+}
+
+.card-progreso strong {
+    color: #aaaaaa;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.card-progreso span {
+    color: #F5C518;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+}
+
+#btnHistorial.btn-secundario {
+    width: 100%;
+}
+
+/* ---------- MENSUALIDAD ---------- */
+
+.estado-cuota {
+    margin: 0 0 14px;
+    padding: 20px;
+    border-left: 4px solid #F5C518;
+    border-radius: 16px;
+}
+
+.estado-cuota h3 {
+    margin: 8px 0;
+    color: #F5C518;
+    font-size: 24px;
+}
+
+.estado-cuota[data-estado="vencido"] {
+    border-left-color: #ff8a80;
+}
+
+.estado-cuota[data-estado="vencido"] h3,
+#errorCuota {
+    color: #ff8a80;
+}
+
+.estado-cuota[data-estado="sin-configurar"] h3 {
+    color: #ffffff;
+}
+
+/* ---------- GIMNASIO ---------- */
+
+.encabezadoGimnasio {
+    padding-bottom: 14px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.encabezadoGimnasio h3 {
+    margin: 4px 0 0;
+    font-size: 22px;
+}
+
+.datoGimnasio {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 13px 0;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.datoGimnasio:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.datoGimnasio span {
+    color: #aaaaaa;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.datoGimnasio strong {
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.dato-horarios ul {
+    display: flex;
+    flex-direction: column;
+    margin: 6px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.dato-horarios li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 9px 10px;
+    margin: 0 -10px;
+    border-radius: 10px;
+    color: #aaaaaa;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.dato-horarios li b {
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.dato-horarios li.cerrado b {
+    color: #ff8a80;
+}
+
+.dato-horarios li.hoy {
+    background: rgba(245, 197, 24, 0.1);
+    color: #F5C518;
+}
+
+.dato-horarios li.hoy b {
+    color: #F5C518;
+    font-weight: 700;
+}
+
+#errorGimnasio {
+    margin-bottom: 14px;
+    color: #ff8a80;
+    font-size: 14px;
+}
+
+#errorGimnasio:empty {
+    display: none;
+}
+
+#contactoGimnasio p {
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+#contactoGimnasio .btnPrincipal {
+    width: 100%;
+}
+
+/* ---------- CHAT ---------- */
+
+.phone-screen > main.pagina-chat {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-bottom: 14px;
+    overflow: hidden;
+}
+
+#informacionChat {
+    flex: none;
+    margin-bottom: 12px;
+    padding: 14px 16px;
+}
+
+#informacionChat h2 {
+    margin: 0 0 2px;
+    font-size: 19px;
+}
+
+#informacionChat p {
+    margin: 0;
+    font-size: 13px;
+}
+
+#informacionChat .eyebrow {
+    margin-bottom: 4px;
+}
+
+#mensajes {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    max-height: none;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    background-color: rgba(17, 17, 17, 0.932);
+    overflow: hidden;
+}
+
+#listaMensajes {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: none;
+    padding-right: 2px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+#listaMensajes::-webkit-scrollbar {
+    display: none;
+}
+
+.mensaje {
+    max-width: 82%;
+    padding: 10px 14px;
+    border-radius: 18px;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.mensaje p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.mensaje small {
+    display: block;
+    margin-top: 5px;
+    color: #aaaaaa;
+    font-size: 11px;
+}
+
+.mensaje.recibido {
+    align-self: flex-start;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom-left-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.mensaje.enviado {
+    align-self: flex-end;
+    border-bottom-right-radius: 6px;
+    background-color: #F5C518;
+    color: #000000;
+}
+
+.mensaje.enviado p,
+.mensaje.enviado small {
+    color: #000000;
+}
+
+#estadoChat {
+    flex: none;
+    min-height: 18px;
+    margin: 6px 4px 0;
+    color: #aaaaaa;
+    font-size: 12px;
+}
+
+#estadoChat[data-tipo="error"] {
+    color: #ff8a80;
+}
+
+#enviarMensaje {
+    flex: none;
+}
+
+#formChat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+#formChat input {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    min-height: 50px;
+    padding: 0 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    background: rgba(17, 17, 17, 0.932);
+    color: #ffffff;
+    font-size: 16px;
+}
+
+#formChat button[type="submit"] {
+    flex: none;
+    width: auto;
+    min-width: 84px;
+    min-height: 50px;
+    padding: 0 18px;
+    border-radius: 14px;
+    font-size: 15px;
+}
+
+#formChat button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* ---------- PERFIL ---------- */
+
+.perfil-cabecera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 20px;
+    padding: 22px 16px;
+    border: 1px solid #2a2a2a;
+    border-radius: 20px;
+    background: #1c1c1c;
+    text-align: center;
+}
+
+.perfil-avatar {
+    display: grid;
+    place-items: center;
+    width: 76px;
+    height: 76px;
+    margin-bottom: 6px;
+    border-radius: 50%;
+    background: #F5C518;
+    color: #111111;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 0 30px rgba(245, 197, 24, 0.25);
+}
+
+.perfil-nombre {
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.perfil-email {
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+#informacionUsuario h2,
+#editarPerfil h2 {
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+
+.datoPerfil {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.datoPerfil:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.datoPerfil p {
+    margin: 0;
+    flex: none;
+    font-size: 13px;
+}
+
+.datoPerfil span {
+    min-width: 0;
+    color: #ffffff;
+    font-size: 15px;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+#formPerfil {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 12px;
+}
+
+#formPerfil > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#formPerfil input {
+    margin-top: 6px;
+}
+
+#btnGuardarPerfil {
+    width: 100%;
+}
+
+#sesion {
+    padding: 0;
+    border: none;
+    background: transparent;
+    margin-bottom: 4px;
+}
+
+#btnCerrarSesion {
+    width: 100%;
+}
+
+/* ---------- EJERCICIOS (catálogo) ---------- */
+
+#busquedaEjercicios {
+    margin-bottom: 16px;
+}
+
+#busquedaEjercicios input {
+    margin: 0;
+    padding-left: 44px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23aaaaaa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 14px center;
+    background-size: 18px;
+}
+
+.tarjetaEjercicio {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    animation: gymlyEntrada .45s ease both;
+}
+
+.tarjetaEjercicio .mediosEjercicio {
+    margin: 0 0 4px;
+}
+
+.tarjetaEjercicio h3,
+.tarjetaEjercicio p {
+    margin: 0;
+}
+
+.tarjetaEjercicio h3 {
+    font-size: 18px;
+}
+
+.tarjetaEjercicio p {
+    font-size: 14px;
+}
+
+.tarjetaEjercicio button {
+    align-self: stretch;
+    margin-top: 6px;
+    white-space: nowrap;
+}
+
+.grupoEjercicio {
+    color: #F5C518 !important;
+    font-size: 12px !important;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Contenido de hojas (notificaciones, detalle de ejercicio) */
+.hoja-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.hoja-item:last-child {
+    border-bottom: none;
+}
+
+.hoja-item strong {
+    display: block;
+    margin-bottom: 3px;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.hoja-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.hoja-item small {
+    display: block;
+    margin-top: 4px;
+    color: #aaaaaa;
+    font-size: 11px;
+}
+
+.hoja-item.nueva strong::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: #F5C518;
+    vertical-align: middle;
+}
+
+.mensajeCarga {
+    padding: 20px 0;
+    text-align: center;
+}

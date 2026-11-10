@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b0e17">
+    <title>SHADOW — Demo visual</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="demo">
+        <header class="site-header">
+            <a class="wordmark" href="../../index.html" aria-label="Volver al portfolio">
+                <span class="wordmark-icon" aria-hidden="true">S</span>
+                SHADOW
+            </a>
+            <span class="demo-tag">DEMO VISUAL · SIN JUGABILIDAD</span>
+        </header>
+
+        <section class="intro" aria-labelledby="titulo">
+            <p class="eyebrow">JUEGO DE PLATAFORMAS Y PUZZLES</p>
+            <h1 id="titulo">Tu sombra recuerda<br>cada movimiento.</h1>
+            <p class="intro-copy">Avanzá por un mundo donde tu propio eco puede convertirse en el camino.</p>
+        </section>
+
+        <section class="game" aria-label="Vista de muestra del juego Shadow">
+            <header class="game-hud">
+                <div class="level">
+                    <span class="level-number">NIVEL 01 / 03</span>
+                    <strong>PRIMER ECO</strong>
+                </div>
+                <p class="level-hint">Usá el retraso para crear un puente vivo.</p>
+                <div class="delay"><span aria-hidden="true">◷</span> SOMBRA <strong>−3s</strong></div>
+            </header>
+
+            <div class="scene" role="img" aria-label="Jugador y sombra recorren plataformas con interruptores y una puerta de salida">
+                <div class="scene-glow"></div>
+                <div class="switch switch-shadow" aria-hidden="true"><span>S</span></div>
+                <div class="switch switch-player" aria-hidden="true"><span>P</span></div>
+                <div class="sync-zone" aria-hidden="true">SYNC</div>
+                <div class="gate" aria-hidden="true"></div>
+                <div class="exit" aria-hidden="true"><span></span></div>
+
+                <div class="platform ground" aria-hidden="true"></div>
+                <div class="platform platform-one" aria-hidden="true"></div>
+                <div class="platform platform-two" aria-hidden="true"></div>
+                <div class="platform platform-three" aria-hidden="true"></div>
+                <div class="platform platform-four" aria-hidden="true"></div>
+                <div class="platform platform-five" aria-hidden="true"></div>
+                <div class="platform platform-six" aria-hidden="true"></div>
+                <div class="hazards hazards-one" aria-hidden="true"></div>
+                <div class="hazards hazards-two" aria-hidden="true"></div>
+
+                <div class="character echo" aria-hidden="true">
+                    <span class="body"><i class="eye"></i><i class="shine"></i></span>
+                    <span class="leg leg-left"></span><span class="leg leg-right"></span>
+                </div>
+                <div class="character player" aria-hidden="true">
+                    <span class="body"><i class="eye"></i><i class="shine"></i></span>
+                    <span class="leg leg-left"></span><span class="leg leg-right"></span>
+                </div>
+
+                <div class="scene-caption"><span class="live-dot"></span> UNA PISTA. DOS RECORRIDOS.</div>
+            </div>
+
+            <footer class="game-controls" aria-label="Controles ilustrativos">
+                <span class="control"><kbd>A</kbd><kbd>D</kbd> MOVER</span>
+                <span class="control"><kbd>ESPACIO</kbd> SALTAR</span>
+                <span class="control control-note">La sombra repite tus movimientos 3 segundos después</span>
+            </footer>
+        </section>
+
+        <section class="about">
+            <div>
+                <p class="eyebrow">LA MECÁNICA</p>
+                <h2>Tu eco es parte de la solución.</h2>
+            </div>
+            <p>Cada salto y cada paso quedan registrados. Tres segundos después, la sombra los repite para activar interruptores y abrir nuevos caminos.</p>
+        </section>
+
+        <footer class="page-footer">
+            <span>PROYECTO DESARROLLADO EN PYTHON + PYGAME</span>
+            <a href="../../index.html">← Volver al portfolio</a>
+        </footer>
+    </main>
+</body>
+</html>

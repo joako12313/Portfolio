@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gymly - Usuarios</title>
+    <link rel="stylesheet" href="../Css/componentes.css?v=app7">
+    <link rel="stylesheet" href="../Css/admin.css?v=app7">
+</head>
+<body class="admin">
+<div class="admin-app">
+    <aside class="sidebar">
+        <a class="logo" href="dashboard.html" aria-label="Ir al inicio">GYMLY<small>Administrador</small></a>
+        <nav class="side-nav" aria-label="Secciones">
+            <a class="side-link" href="dashboard.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.500" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.500" width="7.5" height="7.5" rx="2"/><rect x="13.500" y="13.500" width="7.5" height="7.5" rx="2"/></svg><span>Panel</span></a>
+            <a class="side-link active" href="usuarios.html" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.500 20a6.500 6.500 0 0 1 13 0"/><path d="M16 4.500a3.500 3.500 0 0 1 0 7"/><path d="M18 14.500a6.500 6.500 0 0 1 3.500 5.500"/></svg><span>Usuarios</span></a>
+            <a class="side-link" href="gimnasio.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.500C5 14.800 12 21 12 21Z"/><circle cx="12" cy="9.500" r="2.500"/></svg><span>Gimnasio y horarios</span></a>
+            <a class="side-link" href="rutinas.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18V9"/><path d="M19 18V9"/><path d="M8 18V6.500A2.500 2.500 0 0 1 10.500 4h3A2.500 2.500 0 0 1 16 6.500V18"/><path d="M3 18h18"/></svg><span>Rutinas</span></a>
+            <a class="side-link" href="ejercicios.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.500 6.500v11"/><path d="M17.500 6.500v11"/><path d="M3.500 9v6"/><path d="M20.500 9v6"/><path d="M6.500 12h11"/></svg><span>Ejercicios</span></a>
+            <a class="side-link" href="entrenadores.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="8" r="3.500"/><path d="M3 20a7 7 0 0 1 14 0"/><path d="m16.500 11.500 2 2 3.500-4"/></svg><span>Entrenadores</span></a>
+            <a class="side-link" href="pagos.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.500"/><path d="M3 10h18"/><path d="M7 15h4"/></svg><span>Pagos</span></a>
+            <a class="side-link" href="reportes.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5"/><path d="M4 19h16"/><path d="m8 15 3-4 3 2 4-6"/></svg><span>Reportes</span></a>
+            <a class="side-link" href="mensajes.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18.500V6.500A2.500 2.500 0 0 1 7.500 4h9A2.500 2.500 0 0 1 19 6.500v8a2.500 2.500 0 0 1-2.500 2.500H9l-4 3.500Z"/><path d="M8 9h8"/><path d="M8 12h6"/></svg><span>Mensajes</span></a>
+        </nav>
+        <div class="side-pie">
+            <div class="side-user">
+                <div class="side-avatar" id="sideAvatar" aria-hidden="true">G</div>
+                <div class="side-user-datos">
+                    <span class="side-user-nombre" id="sideNombre">Administrador</span>
+                    <span class="side-user-rol">Administrador</span>
+                </div>
+            </div>
+            <button id="btnCerrarSesion" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg><span>Cerrar sesión</span></button>
+        </div>
+    </aside>
+
+    <div class="admin-main">
+        <header class="topbar">
+            <div class="migas">Administrador / <b>Usuarios</b></div>
+            <div class="admin-info"><span>Administrador</span></div>
+        </header>
+
+        <main class="contenedor">
+            <section class="titulo-seccion">
+                <div>
+                    <h1>Usuarios</h1>
+                    <p>Gestioná los usuarios registrados en el gimnasio.</p>
+                </div>
+                <button class="btn-agregar" id="btnAgregar" type="button">+ Agregar usuario</button>
+            </section>
+
+            <div class="barra-busqueda">
+                <input type="text" id="buscarUsuario" placeholder="Buscar por nombre, apellido, DNI o email...">
+            </div>
+
+            <p id="mensajeUsuarios" role="status" aria-live="polite"></p>
+
+            <section class="tabla-contenedor">
+                <table class="tabla-usuarios">
+                    <colgroup>
+                        <col style="width: 5%">
+                        <col style="width: 8%">
+                        <col style="width: 8%">
+                        <col style="width: 6%">
+                        <col style="width: 13%">
+                        <col style="width: 10%">
+                        <col style="width: 15%">
+                        <col style="width: 9%">
+                        <col style="width: 11%">
+                        <col style="width: 15%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th><th scope="col">Nombre</th><th scope="col">Apellido</th><th scope="col">DNI</th><th scope="col">Email</th>
+                            <th scope="col">Teléfono</th><th scope="col">Días por semana</th><th scope="col">Estado</th><th scope="col">Rol</th><th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaUsuarios"></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</div>
+
+    <!-- Modal para agregar usuario -->
+    <div class="modal" id="modalUsuario">
+        <div class="modal-contenido">
+            <button class="cerrar" id="cerrarModal" type="button" aria-label="Cerrar">×</button>
+            <h2>Nuevo usuario</h2>
+            <p>Completá los datos del usuario.</p>
+
+            <form id="formUsuario" class="form-grid">
+                <div class="campo"><label for="nombre">Nombre</label><input type="text" id="nombre" required></div>
+                <div class="campo"><label for="apellido">Apellido</label><input type="text" id="apellido" required></div>
+                <div class="campo"><label for="dni">DNI</label><input type="text" id="dni" inputmode="numeric" maxlength="20" required></div>
+                <div class="campo completo"><label for="email">Email</label><input type="email" id="email" required></div>
+                <div class="campo"><label for="fechaNacimiento">Fecha de nacimiento</label><input type="date" id="fechaNacimiento"></div>
+                <div class="campo"><label for="telefono">Teléfono</label><input type="text" id="telefono"></div>
+                <div class="campo" id="campoDiasAsistencia">
+                    <label for="diasAsistencia">Días de asistencia por semana</label>
+                    <input type="number" id="diasAsistencia" min="1" max="7" step="1" placeholder="Ej: 3">
+                </div>
+                <div class="campo"><label for="contrasena">Contraseña</label><input type="password" id="contrasena" required></div>
+                <div class="campo completo">
+                    <label for="rol">Rol</label>
+                    <select id="rol">
+                        <option value="usuario">Usuario</option>
+                        <option value="entrenador">Entrenador</option>
+                        <option value="administrador">Administrador</option>
+                    </select>
+                </div>
+                <div class="campo completo" id="campoEstadoUsuario" hidden>
+                    <label for="estadoUsuario">Estado de la cuenta</label>
+                    <select id="estadoUsuario">
+                        <option value="true">Activo</option>
+                        <option value="false">Suspendido</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-guardar">Crear usuario</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../Js/demo-api.js"></script>
+    <script src="../Js/ui.js?v=app7"></script>
+    <script src="../Js/admin-shell.js?v=app7"></script>
+    <script src="../Js/admin.js?v=app8"></script>
+</body>
+</html>

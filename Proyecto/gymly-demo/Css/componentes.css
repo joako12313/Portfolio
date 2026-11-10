@@ -1,0 +1,526 @@
+/* =========================================================
+   GYMLY - BASE COMPARTIDA
+   Paleta, sombras y animaciones comunes a usuario, admin
+   y pantallas de acceso. Se carga PRIMERO en todas las páginas.
+   ========================================================= */
+
+:root {
+    --gymly-negro: #000000;
+    --gymly-fondo: #111111;
+    --gymly-card: #1c1c1c;
+    --gymly-borde: #2a2a2a;
+    --gymly-borde-hover: #3d3d3d;
+    --gymly-texto: #ffffff;
+    --gymly-secundario: #aaaaaa;
+    --gymly-acento: #F5C518;
+    --gymly-acento-hover: #FFD700;
+    --gymly-error: #ff8a80;
+    --gymly-exito: #9bd6a1;
+
+    --gymly-sombra-card: 0 8px 22px rgba(0, 0, 0, .24);
+    --gymly-sombra-acento: 0 8px 18px rgba(245, 197, 24, .08);
+    --gymly-brillo: 0 0 30px rgba(245, 197, 24, .25);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--gymly-texto);
+    background: var(--gymly-negro);
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+/* ---------- BOTONES ---------- */
+
+button {
+    font-family: inherit;
+    transition: transform .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease, opacity .2s ease;
+}
+
+button:active {
+    transform: translateY(0) scale(.98);
+}
+
+@media (hover: hover) {
+    button:hover {
+        transform: translateY(-2px) scale(1.01);
+    }
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--gymly-acento);
+    outline-offset: 2px;
+}
+
+[disabled] {
+    opacity: .55;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* ---------- CAMPOS ---------- */
+
+input,
+select,
+textarea {
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease, background-color .2s ease;
+}
+
+@media (hover: hover) {
+    input:hover,
+    select:hover,
+    textarea:hover {
+        border-color: #444444;
+    }
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--gymly-acento) !important;
+    box-shadow: 0 0 0 3px rgba(245, 197, 24, .10);
+    transform: translateY(-1px);
+}
+
+select {
+    cursor: pointer;
+}
+
+select option {
+    background: #111111;
+    color: #ffffff;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    opacity: .7;
+}
+
+/* Autocompletado del navegador sin fondo azul/blanco */
+input:-webkit-autofill {
+    -webkit-text-fill-color: #ffffff;
+    box-shadow: 0 0 0 1000px #111111 inset;
+    caret-color: #ffffff;
+}
+
+/* ---------- ENTRADA DE PÁGINA ---------- */
+
+main,
+.contenedor {
+    animation: gymlyEntrada .45s ease both;
+}
+
+/* ---------- TARJETAS ---------- */
+
+.rutina,
+.registro,
+.ejercicio,
+.card,
+.tarjeta,
+.tabla-contenedor,
+.panelRutinas,
+.panelUsuarios {
+    transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease, background-color .22s ease;
+}
+
+@media (hover: hover) {
+    .rutina:hover,
+    .registro:hover,
+    .ejercicio:hover,
+    .card:hover,
+    .tarjeta:hover,
+    .panelRutinas:hover,
+    .panelUsuarios:hover {
+        transform: translateY(-3px);
+        border-color: var(--gymly-borde-hover);
+        box-shadow: var(--gymly-sombra-card);
+    }
+}
+
+.rutina:first-child,
+.ejercicio:first-child {
+    border-top-color: var(--gymly-acento);
+}
+
+/* ---------- ETIQUETAS ---------- */
+
+.rol,
+.badge,
+.estado,
+.etiqueta {
+    transition: transform .2s ease;
+}
+
+@media (hover: hover) {
+    .rol:hover,
+    .badge:hover,
+    .estado:hover,
+    .etiqueta:hover {
+        transform: scale(1.06);
+    }
+}
+
+/* ---------- MULTIMEDIA DE EJERCICIOS ---------- */
+
+.mediosEjercicio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 10px;
+    width: 100%;
+    margin: 12px 0;
+}
+
+.medioEjercicio {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--gymly-borde);
+    border-radius: 12px;
+    background: #000000;
+}
+
+.medioEjercicioAnimado {
+    width: min(100%, 220px);
+    aspect-ratio: 1;
+    justify-self: center;
+}
+
+.medioEjercicio img,
+.medioEjercicio video,
+.medioEjercicio iframe {
+    display: block;
+    width: 100%;
+    height: 220px;
+    border: 0;
+    object-fit: contain;
+}
+
+.medioEjercicio a {
+    display: inline-block;
+    padding: 14px;
+    color: var(--gymly-acento);
+}
+
+/* ---------- TABLAS ---------- */
+
+tbody tr {
+    transition: background-color .2s ease, transform .2s ease;
+}
+
+@media (hover: hover) {
+    tbody tr:hover {
+        transform: translateX(3px);
+    }
+}
+
+/* ---------- MODALES ---------- */
+
+.modal,
+.modalRutina {
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    z-index: 1000;
+}
+
+.modal.activo,
+.modalRutina[style*="display: flex"] {
+    animation: fondoModal .2s ease both;
+}
+
+.modal-contenido,
+.modalContenido {
+    animation: modalEntrada .25s ease both;
+    transform-origin: center;
+    margin: auto;
+    overflow-y: auto;
+}
+
+/* ---------- MENSAJES DE CHAT ---------- */
+
+.mensaje {
+    animation: mensajeEntrada .3s ease both;
+    transition: transform .2s ease, border-color .2s ease;
+}
+
+.mensaje.enviado { animation-delay: .05s; }
+.mensaje.recibido { animation-delay: .10s; }
+
+@media (hover: hover) {
+    .mensaje:hover {
+        transform: translateY(-2px);
+    }
+}
+
+.chat-vacio {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    min-height: 180px;
+    padding: 20px;
+    border: 1px dashed var(--gymly-borde);
+    border-radius: 12px;
+    animation: gymlyEntrada .4s ease both;
+}
+
+/* ---------- ESTADOS DE TEXTO (carga / error / éxito) ---------- */
+
+[data-tipo="error"] { color: var(--gymly-error); }
+[data-tipo="exito"] { color: var(--gymly-exito); }
+
+/* =========================================================
+   AVISOS, CONFIRMACIONES Y HOJAS (reemplazan alert/confirm)
+   Dentro del teléfono se muestran dentro de la pantalla.
+   ========================================================= */
+
+.gy-host {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    pointer-events: none;
+}
+
+.phone .gy-host {
+    position: absolute;
+    z-index: 200;
+}
+
+.gy-toasts {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: min(380px, calc(100vw - 32px));
+}
+
+.phone .gy-toasts {
+    top: 14px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+}
+
+.gy-toast {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 15px;
+    border: 1px solid var(--gymly-borde);
+    border-left: 4px solid var(--gymly-acento);
+    border-radius: 14px;
+    background: var(--gymly-card);
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.4;
+    box-shadow: var(--gymly-sombra-card);
+    pointer-events: auto;
+    animation: mensajeEntrada .3s ease both;
+    transition: opacity .25s ease, transform .25s ease;
+}
+
+.gy-toast[data-tipo="error"] { border-left-color: var(--gymly-error); color: #ffffff; }
+.gy-toast[data-tipo="exito"] { border-left-color: var(--gymly-exito); color: #ffffff; }
+.gy-toast.saliendo { opacity: 0; transform: translateY(-8px); }
+
+.gy-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, .75);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    pointer-events: auto;
+    animation: fondoModal .2s ease both;
+}
+
+.gy-overlay.hoja {
+    align-items: flex-end;
+    padding: 0;
+}
+
+.gy-dialogo,
+.gy-hoja {
+    width: min(100%, 400px);
+    border: 1px solid var(--gymly-borde);
+    background: var(--gymly-card);
+    box-shadow: var(--gymly-sombra-card);
+    animation: modalEntrada .25s ease both;
+}
+
+.gy-dialogo {
+    padding: 24px;
+    border-radius: 18px;
+}
+
+.gy-dialogo h3,
+.gy-hoja h3 {
+    margin-bottom: 8px;
+    font-size: 19px;
+}
+
+.gy-dialogo p {
+    margin-bottom: 20px;
+    color: var(--gymly-secundario);
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+.gy-acciones {
+    display: flex;
+    gap: 10px;
+}
+
+.gy-acciones button {
+    flex: 1;
+    min-height: 46px;
+    padding: 0 16px;
+    border-radius: 12px;
+    border: 1px solid var(--gymly-borde-hover);
+    background: transparent;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.gy-acciones .gy-aceptar {
+    border-color: var(--gymly-acento);
+    background: var(--gymly-acento);
+    color: #111111;
+}
+
+.gy-acciones .gy-aceptar.peligro {
+    border-color: var(--gymly-error);
+    background: var(--gymly-error);
+}
+
+.gy-hoja {
+    max-width: none;
+    max-height: 78%;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 18px 20px;
+    border-bottom: 0;
+    border-radius: 24px 24px 0 0;
+}
+
+.phone .gy-hoja { padding-bottom: 20px; }
+
+.gy-hoja::before {
+    content: "";
+    flex: none;
+    width: 40px;
+    height: 4px;
+    margin: 0 auto 14px;
+    border-radius: 2px;
+    background: var(--gymly-borde-hover);
+}
+
+.gy-hoja-cuerpo {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+/* ---------- ANIMACIONES ---------- */
+
+@keyframes gymlyEntrada {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes entradaGymly {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes modalEntrada {
+    from { opacity: 0; transform: translateY(16px) scale(.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fondoModal {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes mensajeEntrada {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gymlyPulso {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.04); }
+}
+
+@keyframes gymlyBrillo {
+    from { box-shadow: 0 0 0 rgba(245, 197, 24, 0); }
+    to   { box-shadow: 0 0 18px rgba(245, 197, 24, .12); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
